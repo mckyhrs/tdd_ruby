@@ -1,5 +1,4 @@
 require_relative '../../../lib/section1/chapter1/Dollar'
-# require_relative '../../../lib/section1/chapter1/Money'
 
 RSpec.describe do
   it '' do

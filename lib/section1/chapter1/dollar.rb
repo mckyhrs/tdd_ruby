@@ -2,10 +2,10 @@ class Dollar
   attr_accessor :amount
 
   def initialize(amount)
-    @amount = 5 * 2
-    # @amount = amount
+    @amount = amount
   end
 
   def times(multiplier)
+    @amount *= multiplier
   end
 end
