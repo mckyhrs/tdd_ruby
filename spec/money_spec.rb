@@ -1,14 +1,12 @@
 require_relative '../lib/Dollar'
 
 RSpec.describe do
-  it do
+  it 'test_multiplication' do
     five = Dollar.new(5)
-    product = five.times(2)
-    expect(product.amount).to eq 10
-    product = five.times(3)
-    expect(product.amount).to eq 15
+    expect(Dollar.new(10).equals(five.times(2))).to eq true
+    expect(Dollar.new(15).equals(five.times(3))).to eq true
   end
-  it do
+  it 'test_equality' do
     expect(Dollar.new(5).equals(Dollar.new(5))).to eq true
     expect(Dollar.new(5).equals(Dollar.new(6))).to eq false
   end
