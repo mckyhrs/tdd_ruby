@@ -1,5 +1,3 @@
-require_relative './Money'
-
 class Dollar < Money
   def initialize(amount)
     @amount = amount

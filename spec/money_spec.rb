@@ -1,22 +1,23 @@
+require_relative '../lib/Money'
 require_relative '../lib/Dollar'
 require_relative '../lib/Franc'
 
 RSpec.describe do
   it 'test multiplication' do
-    five = Dollar.new(5)
-    expect(Dollar.new(10).equals(five.times(2))).to eq true
-    expect(Dollar.new(15).equals(five.times(3))).to eq true
+    five = Money.dollar(5)
+    expect(Money.dollar(10).equals(five.times(2))).to eq true
+    expect(Money.dollar(15).equals(five.times(3))).to eq true
   end
   it 'test equality' do
-    expect(Dollar.new(5).equals(Dollar.new(5))).to eq true
-    expect(Dollar.new(5).equals(Dollar.new(6))).to eq false
-    expect(Franc.new(5).equals(Franc.new(5))).to eq true
-    expect(Franc.new(5).equals(Franc.new(6))).to eq false
-    expect(Franc.new(5).equals(Dollar.new(5))).to eq false
+    expect(Money.dollar(5).equals(Money.dollar(5))).to eq true
+    expect(Money.dollar(5).equals(Money.dollar(6))).to eq false
+    expect(Money.franc(5).equals(Money.franc(5))).to eq true
+    expect(Money.franc(5).equals(Money.franc(6))).to eq false
+    expect(Money.franc(5).equals(Money.dollar(5))).to eq false
   end
   it 'test franc multiplication' do
-    five = Franc.new(5)
-    expect(Franc.new(10).equals(five.times(2))).to eq true
-    expect(Franc.new(15).equals(five.times(3))).to eq true
+    five = Money.franc(5)
+    expect(Money.franc(10).equals(five.times(2))).to eq true
+    expect(Money.franc(15).equals(five.times(3))).to eq true
   end
 end
