@@ -20,4 +20,8 @@ RSpec.describe do
     expect(Money.franc(10).equals(five.times(2))).to eq true
     expect(Money.franc(15).equals(five.times(3))).to eq true
   end
+  it 'test currency' do
+    expect('USD').to eq Money.dollar(1).currency
+    expect('CHF').to eq Money.franc(1).currency
+  end
 end

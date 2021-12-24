@@ -1,12 +1,17 @@
 class Money
-  attr_accessor :amount
+  attr_accessor :amount, :currency
 
-  def initialize
-    raise 'this class is an abstract class and cannot be instantiated'
+  def initialize(amount, currency)
+    @amount = amount
+    @currency = currency
   end
 
   def times(multiplier)
     raise "Called abstract method: times"
+  end
+
+  def currency
+    @currency
   end
 
   def equals(money)
@@ -15,11 +20,11 @@ class Money
 
   class << self
     def dollar(amount)
-      Dollar.new(amount)
+      Dollar.new(amount, 'USD')
     end
 
     def franc(amount)
-      Franc.new(amount)
+      Franc.new(amount, 'CHF')
     end
   end
 end

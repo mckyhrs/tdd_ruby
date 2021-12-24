@@ -1,9 +1,9 @@
 class Franc < Money
-  def initialize(amount)
-    @amount = amount
+  def initialize(amount, currency)
+    super(amount, currency)
   end
 
   def times(multiplier)
-    Franc.new(@amount * multiplier)
+    Money.franc(@amount * multiplier)
   end
 end
