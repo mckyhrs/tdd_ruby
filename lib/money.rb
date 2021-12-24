@@ -7,7 +7,7 @@ class Money
   end
 
   def times(multiplier)
-    raise "Called abstract method: times"
+    Money.new(@amount * multiplier, @currency)
   end
 
   def currency
@@ -15,7 +15,7 @@ class Money
   end
 
   def equals(money)
-    @amount == money.amount && self.class == money.class
+    @amount == money.amount && currency == money.currency
   end
 
   class << self

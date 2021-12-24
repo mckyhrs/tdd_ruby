@@ -24,4 +24,7 @@ RSpec.describe do
     expect('USD').to eq Money.dollar(1).currency
     expect('CHF').to eq Money.franc(1).currency
   end
+  it 'test different class equality' do
+    expect(Money.new(10, 'CHF').equals(Franc.new(10, 'CHF'))).to eq true
+  end
 end
