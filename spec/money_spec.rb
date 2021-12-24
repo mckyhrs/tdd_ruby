@@ -10,6 +10,8 @@ RSpec.describe do
   it 'test equality' do
     expect(Dollar.new(5).equals(Dollar.new(5))).to eq true
     expect(Dollar.new(5).equals(Dollar.new(6))).to eq false
+    expect(Franc.new(5).equals(Franc.new(5))).to eq true
+    expect(Franc.new(5).equals(Franc.new(6))).to eq false
   end
   it 'test franc multiplication' do
     five = Franc.new(5)
