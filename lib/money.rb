@@ -1,4 +1,7 @@
-class Money
+require_relative './Expression'
+require_relative './Bank'
+
+class Money < Expression
   attr_accessor :amount, :currency
 
   def initialize(amount, currency)
@@ -9,9 +12,9 @@ class Money
   def times(multiplier)
     Money.new(@amount * multiplier, @currency)
   end
-
-  def currency
-    @currency
+  
+  def plus(addend)
+    Money.new(@amount + addend.amount, @currency)
   end
 
   def equals(money)

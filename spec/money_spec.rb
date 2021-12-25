@@ -1,4 +1,6 @@
 require_relative '../lib/Money'
+require_relative '../lib/Expression'
+require_relative '../lib/Bank'
 
 RSpec.describe do
   it 'test multiplication' do
@@ -14,5 +16,12 @@ RSpec.describe do
   it 'test currency' do
     expect('USD').to eq Money.dollar(1).currency
     expect('CHF').to eq Money.franc(1).currency
+  end
+  it 'test simple addition' do
+    five = Money.dollar(5)
+    sum = five.plus(five)
+    bank = Bank.new
+    reduced = bank.reduce(sum, 'USD')
+    expect(Money.dollar(10).equals(reduced)).to eq true
   end
 end
